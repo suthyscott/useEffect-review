@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios'
+import CharDisplay from './CharDisplay';
 
 function App() {
   const [chars, setChars] = useState([])
@@ -17,7 +18,9 @@ function App() {
   console.log(chars)
   return (
     <div className="App">
-      app.js
+      {chars.map((char, index) => {
+        return <CharDisplay char={char}/>
+      })}
     </div>
   );
 }
